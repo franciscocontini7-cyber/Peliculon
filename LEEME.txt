@@ -1,0 +1,25 @@
+PELICULON — versión instalable (PWA)
+
+CONTENIDO
+- index.html: tu aplicación PELICULON original, preparada para instalarse.
+- manifest.webmanifest: nombre, iconos y modo de aplicación.
+- sw.js: caché sin conexión y detección de nuevas versiones.
+- icons/: iconos de la aplicación.
+
+CÓMO PUBLICAR
+1. Sube TODOS los archivos y carpetas de este paquete a la misma carpeta de un hosting HTTPS.
+   Ejemplos: tu hosting actual, GitHub Pages, Netlify o Firebase Hosting.
+2. La página principal debe quedar en la ruta /index.html.
+3. Abre la URL HTTPS desde Android con Chrome.
+4. Pulsa “Instalar app” cuando aparezca, o usa el menú de Chrome > Instalar aplicación / Añadir a pantalla de inicio.
+
+ACTUALIZACIÓN AUTOMÁTICA
+- Cuando publiques una nueva versión reemplazando index.html y/o los archivos, el navegador comprobará si hay cambios.
+- Al detectar una nueva versión, PELICULON mostrará “Hay una nueva versión disponible”; pulsa “Actualizar”.
+- La aplicación recargará con la versión nueva. La comprobación también se realiza al volver a abrir la app y aproximadamente cada hora.
+- Para que la actualización funcione, conserva sw.js en la misma carpeta y no cambies la ruta de instalación.
+
+IMPORTANTE
+- No se puede instalar una web como aplicación PWA abriendo el archivo HTML directamente desde el PC (file://). Necesita estar publicada en HTTPS (localhost sirve para pruebas).
+- Esto instala PELICULON como aplicación web, no crea un APK nativo.
+- La caché sin conexión conserva la estructura de la app; las funciones que consultan TMDB, Firebase o reproducen videos necesitan conexión.
